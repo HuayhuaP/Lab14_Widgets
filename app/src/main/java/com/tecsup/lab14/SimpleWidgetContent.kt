@@ -18,7 +18,7 @@ import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
 import androidx.glance.text.Text
 
-class SimpleWidgetContent : GlanceAppWidget() {
+class LastActionsWidget : GlanceAppWidget() {
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         provideContent {
@@ -36,10 +36,14 @@ class SimpleWidgetContent : GlanceAppWidget() {
             verticalAlignment = Alignment.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "¿A donde quieres dirigirte?", modifier = GlanceModifier.padding(12.dp))
+            Text(
+                text = "Últimas Acciones Realizadas",
+                modifier = GlanceModifier.padding(12.dp)
+            )
+            // Aquí mostrarías una lista de las últimas acciones realizadas
             Row(horizontalAlignment = Alignment.CenterHorizontally) {
                 Button(
-                    text = "Página Principal",
+                    text = "Ver más",
                     onClick = actionStartActivity<MainActivity>()
                 )
             }
